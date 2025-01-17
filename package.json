@@ -1,0 +1,20 @@
+{
+  "name": "deploy",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^22.10.5",
+    "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "@types/aws-sdk": "^2.7.4",
+    "aws-sdk": "^2.1692.0",
+    "child_process": "^1.0.2",
+    "path": "^0.12.7",
+    "redis": "^4.7.0"
+  },
+  "scripts": {
+    "dev": "tsc -b && node dist/index.js"
+  }
+}
