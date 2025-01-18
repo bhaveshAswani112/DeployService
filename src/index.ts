@@ -133,7 +133,10 @@ async function main() {
                 await downloadSourceCode(id)
                 await buildProject(id)
                 console.log("Build completed")
-                const paths = await getPaths(path.join(__dirname,`output/${id}/dist`))
+                let paths = await getPaths(path.join(__dirname,`output/${id}/dist`))
+                if(!paths) {
+                    paths = await getPaths(path.join(__dirname,`output/${id}/build`))
+                }
                 // console.log(paths)
                 paths.map(async (path) => {
                     const fileName = path.replace(__dirname, "").replace(/\\/g, "/").startsWith("/") ? path.replace(__dirname, "").replace(/\\/g, "/").substring(1) : path.replace(__dirname, "").replace(/\\/g, "/")
